@@ -1,8 +1,6 @@
-// Hapus atau ganti dengan yang lebih subtle
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
-// Ganti dengan cursor yang lebih subtle atau hapus sama sekali
 const CursorDot = styled.div`
   position: fixed;
   top: 0;
@@ -26,45 +24,7 @@ const CursorDot = styled.div`
 `;
 
 const MouseFollower = () => {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [isActive, setIsActive] = useState(false);
-
-  useEffect(() => {
-    const updatePosition = (e) => {
-      setPosition({ x: e.clientX, y: e.clientY });
-    };
-
-    const handleMouseEnter = () => setIsActive(true);
-    const handleMouseLeave = () => setIsActive(false);
-
-    // Hanya aktif pada elemen tertentu
-    const hoverElements = document.querySelectorAll('a, button, [data-cursor="hover"]');
-    
-    hoverElements.forEach(el => {
-      el.addEventListener('mouseenter', handleMouseEnter);
-      el.addEventListener('mouseleave', handleMouseLeave);
-    });
-
-    window.addEventListener('mousemove', updatePosition);
-
-    return () => {
-      window.removeEventListener('mousemove', updatePosition);
-      hoverElements.forEach(el => {
-        el.removeEventListener('mouseenter', handleMouseEnter);
-        el.removeEventListener('mouseleave', handleMouseLeave);
-      });
-    };
-  }, []);
-
-  return (
-    <CursorDot
-      className={isActive ? 'active' : ''}
-      style={{
-        left: `${position.x}px`,
-        top: `${position.y}px`,
-      }}
-    />
-  );
+  return <CursorDot className="cursor-dot" />;
 };
 
 export default MouseFollower;

@@ -1,12 +1,27 @@
 import React from 'react';
 import styled from 'styled-components';
-import ContactComponent from '../components/Contact';
 
 const ContactContainer = styled.div`
-  padding-top: 100px;
   min-height: 100vh;
-  background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
+
+const ContactContent = styled.div`
+  text-align: center;
+  color: white;
+`;
+
+const ContactComponent = () => {
+  return (
+    <ContactContent>
+      <h1>Contact Us</h1>
+      <p>Get in touch with us for your luxury jewelry needs.</p>
+    </ContactContent>
+  );
+};
 
 const Contact = () => {
   return (
