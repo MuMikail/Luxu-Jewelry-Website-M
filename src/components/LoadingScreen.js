@@ -31,15 +31,6 @@ const rotate = keyframes`
   }
 `;
 
-const float = keyframes`
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-`;
-
 const LoadingContainer = styled(motion.div)`
   position: fixed;
   top: 0;
@@ -114,9 +105,8 @@ const LoadingSubtitle = styled(motion.p)`
   font-size: 1.2rem;
   font-weight: 300;
   letter-spacing: 3px;
-  margin-top: 1rem;
+  margin-top: 2rem;
   text-transform: uppercase;
-  animation: ${float} 3s ease-in-out infinite;
 `;
 
 const ProgressContainer = styled.div`
