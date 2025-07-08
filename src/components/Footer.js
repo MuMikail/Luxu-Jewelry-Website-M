@@ -298,7 +298,7 @@ const Footer = () => {
 
         <FooterBottom>
           <Copyright>
-            © 2024 Mikail. All rights reserved.
+            © 2025 Mikail. All rights reserved.
           </Copyright>
           <FooterLinks>
             <FooterBottomLink href="#">Privacy Policy</FooterBottomLink>
